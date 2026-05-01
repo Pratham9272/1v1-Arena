@@ -55,5 +55,12 @@ npm run dev:admin
 - Default API URL: `http://localhost:5000/api`
 - The backend is designed for MongoDB with Mongoose models.
 - For MongoDB Atlas, you can keep the SRV URI in `MONGODB_URI` and set the actual database name with `MONGODB_DB_NAME`.
+- On Render, add these backend environment variables in the service dashboard:
+  - `MONGODB_URI`: your MongoDB Atlas connection string. The code also accepts `MONGO_URI` or `DATABASE_URL`.
+  - `MONGODB_DB_NAME`: `one-v-one-platform`, or your preferred database name.
+  - `JWT_SECRET`: a strong random secret.
+  - `CLIENT_URL`: deployed player frontend URL.
+  - `ADMIN_URL`: deployed admin frontend URL.
+  - `ADMIN_ACCESS_KEY`: a private admin key.
 - Match creation in this version is API-driven and mocked as an instant paired match so the UI and payout flow can be tested early.
 - Real-time matchmaking, payment gateway integration, anti-cheat checks, and multiplayer session sync can be added next.
