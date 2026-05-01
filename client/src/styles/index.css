@@ -610,6 +610,11 @@ textarea {
   color: var(--muted);
 }
 
+.auth-tip {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;

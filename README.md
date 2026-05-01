@@ -54,5 +54,6 @@ npm run dev:admin
 
 - Default API URL: `http://localhost:5000/api`
 - The backend is designed for MongoDB with Mongoose models.
+- For MongoDB Atlas, you can keep the SRV URI in `MONGODB_URI` and set the actual database name with `MONGODB_DB_NAME`.
 - Match creation in this version is API-driven and mocked as an instant paired match so the UI and payout flow can be tested early.
 - Real-time matchmaking, payment gateway integration, anti-cheat checks, and multiplayer session sync can be added next.

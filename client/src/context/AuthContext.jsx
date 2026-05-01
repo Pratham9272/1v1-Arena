@@ -12,8 +12,12 @@ const storageKey = "one-v-one-auth";
 
 export const AuthProvider = ({ children }) => {
   const [authState, setAuthState] = useState(() => {
-    const stored = localStorage.getItem(storageKey);
-    return stored ? JSON.parse(stored) : { token: "", user: null };
+    try {
+      const stored = localStorage.getItem(storageKey);
+      return stored ? JSON.parse(stored) : { token: "", user: null };
+    } catch (error) {
+      return { token: "", user: null };
+    }
   });
 
   useEffect(() => {

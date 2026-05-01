@@ -1,12 +1,10 @@
 import cors from "cors";
-import dotenv from "dotenv";
 import express from "express";
+import "./config/env.js";
 import authRoutes from "./routes/authRoutes.js";
 import gameRoutes from "./routes/gameRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import { errorHandler, notFound } from "./middleware/errorHandler.js";
-
-dotenv.config();
 
 export const app = express();
 const allowedOrigins = [
