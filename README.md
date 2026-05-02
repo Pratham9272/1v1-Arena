@@ -55,6 +55,7 @@ npm run dev:admin
 - Default API URL: `http://localhost:5000/api`
 - The backend is designed for MongoDB with Mongoose models.
 - For MongoDB Atlas, you can keep the SRV URI in `MONGODB_URI` and set the actual database name with `MONGODB_DB_NAME`.
+- If Atlas fails with `ReplicaSetNoPrimary` or an IP whitelist message, add your current public IP in MongoDB Atlas under `Network Access -> Add IP Address`. For temporary local testing only, Atlas also allows `0.0.0.0/0`, but a specific IP is safer.
 - On Render, add these backend environment variables in the service dashboard:
   - `MONGODB_URI`: your MongoDB Atlas connection string. The code also accepts `MONGO_URI` or `DATABASE_URL`.
   - `MONGODB_DB_NAME`: `one-v-one-platform`, or your preferred database name.

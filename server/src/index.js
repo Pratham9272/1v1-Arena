@@ -7,11 +7,23 @@ const port = process.env.PORT || 5000;
 const startServer = async () => {
   try {
     await connectDatabase();
-    app.listen(port, () => {
+    const server = app.listen(port, () => {
       console.log(`Server running on port ${port}`);
     });
+
+    server.on("error", (error) => {
+      if (error.code === "EADDRINUSE") {
+        console.error(
+          `Failed to start server: port ${port} is already in use. Stop the old server process or set a different PORT in server/.env.`
+        );
+      } else {
+        console.error(`Failed to start server: ${error.message}`);
+      }
+
+      process.exit(1);
+    });
   } catch (error) {
-    console.error("Failed to start server", error);
+    console.error(`Failed to start server: ${error.message}`);
     process.exit(1);
   }
 };
